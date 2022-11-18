@@ -21,5 +21,8 @@
         "SYSCLK",
         "SYSCLKSOURCE",
         "VOLTAGESCALING"
-    ]
+    ],
+    "files.associations": {
+        "ring_buffer.h": "c"
+    }
 }
