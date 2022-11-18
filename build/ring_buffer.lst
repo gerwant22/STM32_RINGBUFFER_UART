@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 1
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 1
   14:Core/Src/ring_buffer.c ****     {
   15:Core/Src/ring_buffer.c ****         return RB_ERROR;
   16:Core/Src/ring_buffer.c ****     }
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 2
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s 			page 2
 
 
   17:Core/Src/ring_buffer.c ****     //
@@ -77,8 +77,8 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 1
   53 0010 0133     		adds	r3, r3, #1
   54              		.loc 1 19 34 view .LVU11
   55 0012 5A42     		rsbs	r2, r3, #0
-  56 0014 03F00703 		and	r3, r3, #7
-  57 0018 02F00702 		and	r2, r2, #7
+  56 0014 03F00F03 		and	r3, r3, #15
+  57 0018 02F00F02 		and	r2, r2, #15
   58 001c 58BF     		it	pl
   59 001e 5342     		rsbpl	r3, r2, #0
   60              		.loc 1 19 15 view .LVU12
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 1
   89              		.cfi_startproc
   90              		@ args = 0, pretend = 0, frame = 0
   91              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 3
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s 			page 3
 
 
   92              		@ link register save eliminated.
@@ -130,8 +130,8 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 1
   97 0002 531C     		adds	r3, r2, #1
   98              		.loc 1 26 40 view .LVU22
   99 0004 D3F1000C 		rsbs	ip, r3, #0
- 100 0008 03F00703 		and	r3, r3, #7
- 101 000c 0CF0070C 		and	ip, ip, #7
+ 100 0008 03F00F03 		and	r3, r3, #15
+ 101 000c 0CF00F0C 		and	ip, ip, #15
  102 0010 58BF     		it	pl
  103 0012 CCF10003 		rsbpl	r3, ip, #0
  104              	.LVL5:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 1
  133              		.cfi_endproc
  134              	.LFE131:
  136              		.section	.text.RB_Flush,"ax",%progbits
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 4
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s 			page 4
 
 
  137              		.align	1
@@ -213,19 +213,19 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 1
  161              	.LFE132:
  163              		.text
  164              	.Letext0:
- 165              		.file 2 "c:\\users\\daniel\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xp
- 166              		.file 3 "c:\\users\\daniel\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xp
+ 165              		.file 2 "c:\\users\\danie\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 166              		.file 3 "c:\\users\\danie\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
  167              		.file 4 "Core/Inc/ring_buffer.h"
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s 			page 5
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ring_buffer.c
-C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s:20     .text.RB_Read:0000000000000000 $t
-C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s:26     .text.RB_Read:0000000000000000 RB_Read
-C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s:79     .text.RB_Write:0000000000000000 $t
-C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s:85     .text.RB_Write:0000000000000000 RB_Write
-C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s:137    .text.RB_Flush:0000000000000000 $t
-C:\Users\Daniel\AppData\Local\Temp\ccoouxJQ.s:143    .text.RB_Flush:0000000000000000 RB_Flush
+C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s:20     .text.RB_Read:0000000000000000 $t
+C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s:26     .text.RB_Read:0000000000000000 RB_Read
+C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s:79     .text.RB_Write:0000000000000000 $t
+C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s:85     .text.RB_Write:0000000000000000 RB_Write
+C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s:137    .text.RB_Flush:0000000000000000 $t
+C:\Users\danie\AppData\Local\Temp\ccH7mSzG.s:143    .text.RB_Flush:0000000000000000 RB_Flush
 
 NO UNDEFINED SYMBOLS

@@ -24,6 +24,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ring_buffer.h"
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,6 +34,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define ENDLINE '\n'
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -45,13 +47,17 @@
 /* USER CODE BEGIN PV */
 RingBuffer_t ReceiveBuffer;
 uint8_t ReceiveTmp;
+uint8_t ReceivedLines;
+uint8_t ReceivedData[16];
+uint8_t i;
+uint8_t Tmp;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
-
+void UartLog(char *Message);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -99,8 +105,40 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    HAL_Delay(200);
-    HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+    if (ReceivedLines > 0)
+    {
+      i = 0;
+      do
+      {
+        RB_Read(&ReceiveBuffer, &Tmp);
+        if (Tmp == ENDLINE)
+        {
+          ReceivedData[i] = 0;
+        }
+        else
+        {
+          ReceivedData[i] = Tmp;
+        }
+
+        i++;
+      } while (Tmp != ENDLINE);
+
+      ReceivedLines--;
+
+      // LED_ON
+      if (strcmp("LED_ON", (char *)ReceivedData) == 0)
+      {
+        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+        UartLog("Turn ON LED\n\r");
+      }
+      else if (strcmp("LED_OFF", (char *)ReceivedData) == 0)
+      {
+        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+        UartLog("Turn OFF LED\n\r");
+      }
+
+      // LED_OFF
+    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -165,13 +203,26 @@ static void MX_NVIC_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if (huart->Instance == USART2)
   {
-    RB_Write(&ReceiveBuffer, ReceiveTmp);
+
+    if (RB_OK == RB_Write(&ReceiveBuffer, ReceiveTmp))
+    {
+      if (ReceiveTmp == ENDLINE)
+      {
+        ReceivedLines++;
+      }
+    }
+
     HAL_UART_Receive_IT(&huart2, &ReceiveTmp, 1);
   }
+}
+
+void UartLog(char *Message)
+{
+  HAL_UART_Transmit(&huart2, (uint8_t *)Message, strlen(Message), 10);
 }
 /* USER CODE END 4 */
 

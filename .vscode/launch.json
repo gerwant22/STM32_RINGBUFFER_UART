@@ -10,7 +10,7 @@
             "servertype": "openocd",
             "preLaunchTask": "Build STM",
             "device": "stm32f411xe.s",
-            "svdFile": "./STM32F411.svd",
+            "svdFile": "${workspaceRoot}/STM32F411.svd",
             "configFiles": [
                 "openocd.cfg"
             ]
@@ -25,6 +25,7 @@
             "servertype": "openocd",
             "preLaunchTask": "Build STM",
             "device": "stm32f411xe.s",
+			"svdFile": "${workspaceRoot}/STM32F411.svd",
             "configFiles": [
                 "openocd.cfg"
             ]
