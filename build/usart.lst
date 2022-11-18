@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 1
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 1
   28:Core/Src/usart.c **** 
   29:Core/Src/usart.c **** /* USART2 init function */
   30:Core/Src/usart.c **** 
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 2
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 2
 
 
   31:Core/Src/usart.c **** void MX_USART2_UART_Init(void)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 1
   65 001c C361     		str	r3, [r0, #28]
   49:Core/Src/usart.c ****   if (HAL_UART_Init(&huart2) != HAL_OK)
   66              		.loc 1 49 3 is_stmt 1 view .LVU17
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 3
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 3
 
 
   67              		.loc 1 49 7 is_stmt 0 view .LVU18
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 1
  109              		.loc 1 62 3 is_stmt 1 view .LVU25
  110              		.loc 1 62 20 is_stmt 0 view .LVU26
  111 0004 0023     		movs	r3, #0
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 4
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 4
 
 
  112 0006 0393     		str	r3, [sp, #12]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 1
  139 0020 0191     		str	r1, [sp, #4]
   69:Core/Src/usart.c **** 
  140              		.loc 1 69 5 view .LVU33
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 5
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 5
 
 
  141 0022 03F5FA33 		add	r3, r3, #128000
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 1
  179              		.loc 1 79 27 is_stmt 0 view .LVU49
  180 0054 0323     		movs	r3, #3
  181 0056 0693     		str	r3, [sp, #24]
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 6
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 6
 
 
   80:Core/Src/usart.c ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -352,13 +352,13 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 1
  223              		.loc 1 92 16 is_stmt 0 view .LVU58
  224 0002 0268     		ldr	r2, [r0]
  225              		.loc 1 92 5 view .LVU59
- 226 0004 064B     		ldr	r3, .L17
+ 226 0004 084B     		ldr	r3, .L17
  227 0006 9A42     		cmp	r2, r3
  228 0008 00D0     		beq	.L16
  229              	.LVL8:
  230              	.L13:
   93:Core/Src/usart.c ****   {
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 7
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 7
 
 
   94:Core/Src/usart.c ****   /* USER CODE BEGIN USART2_MspDeInit 0 */
@@ -373,83 +373,92 @@ ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 1
  103:Core/Src/usart.c ****     */
  104:Core/Src/usart.c ****     HAL_GPIO_DeInit(GPIOA, USART_TX_Pin|USART_RX_Pin);
  105:Core/Src/usart.c **** 
- 106:Core/Src/usart.c ****   /* USER CODE BEGIN USART2_MspDeInit 1 */
- 107:Core/Src/usart.c **** 
- 108:Core/Src/usart.c ****   /* USER CODE END USART2_MspDeInit 1 */
- 109:Core/Src/usart.c ****   }
- 110:Core/Src/usart.c **** }
- 231              		.loc 1 110 1 view .LVU60
+ 106:Core/Src/usart.c ****     /* USART2 interrupt Deinit */
+ 107:Core/Src/usart.c ****     HAL_NVIC_DisableIRQ(USART2_IRQn);
+ 108:Core/Src/usart.c ****   /* USER CODE BEGIN USART2_MspDeInit 1 */
+ 109:Core/Src/usart.c **** 
+ 110:Core/Src/usart.c ****   /* USER CODE END USART2_MspDeInit 1 */
+ 111:Core/Src/usart.c ****   }
+ 112:Core/Src/usart.c **** }
+ 231              		.loc 1 112 1 view .LVU60
  232 000a 08BD     		pop	{r3, pc}
  233              	.LVL9:
  234              	.L16:
   98:Core/Src/usart.c **** 
  235              		.loc 1 98 5 is_stmt 1 view .LVU61
- 236 000c 054A     		ldr	r2, .L17+4
+ 236 000c 074A     		ldr	r2, .L17+4
  237 000e 136C     		ldr	r3, [r2, #64]
  238 0010 23F40033 		bic	r3, r3, #131072
  239 0014 1364     		str	r3, [r2, #64]
  104:Core/Src/usart.c **** 
  240              		.loc 1 104 5 view .LVU62
  241 0016 0C21     		movs	r1, #12
- 242 0018 0348     		ldr	r0, .L17+8
+ 242 0018 0548     		ldr	r0, .L17+8
  243              	.LVL10:
  104:Core/Src/usart.c **** 
  244              		.loc 1 104 5 is_stmt 0 view .LVU63
  245 001a FFF7FEFF 		bl	HAL_GPIO_DeInit
  246              	.LVL11:
- 247              		.loc 1 110 1 view .LVU64
- 248 001e F4E7     		b	.L13
- 249              	.L18:
- 250              		.align	2
- 251              	.L17:
- 252 0020 00440040 		.word	1073759232
- 253 0024 00380240 		.word	1073887232
- 254 0028 00000240 		.word	1073872896
- 255              		.cfi_endproc
- 256              	.LFE132:
- 258              		.global	huart2
- 259              		.section	.bss.huart2,"aw",%nobits
- 260              		.align	2
- 261              		.set	.LANCHOR0,. + 0
- 264              	huart2:
- 265 0000 00000000 		.space	68
- 265      00000000 
- 265      00000000 
- 265      00000000 
- 265      00000000 
- 266              		.text
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 8
+ 107:Core/Src/usart.c ****   /* USER CODE BEGIN USART2_MspDeInit 1 */
+ 247              		.loc 1 107 5 is_stmt 1 view .LVU64
+ 248 001e 2620     		movs	r0, #38
+ 249 0020 FFF7FEFF 		bl	HAL_NVIC_DisableIRQ
+ 250              	.LVL12:
+ 251              		.loc 1 112 1 is_stmt 0 view .LVU65
+ 252 0024 F1E7     		b	.L13
+ 253              	.L18:
+ 254 0026 00BF     		.align	2
+ 255              	.L17:
+ 256 0028 00440040 		.word	1073759232
+ 257 002c 00380240 		.word	1073887232
+ 258 0030 00000240 		.word	1073872896
+ 259              		.cfi_endproc
+ 260              	.LFE132:
+ 262              		.global	huart2
+ 263              		.section	.bss.huart2,"aw",%nobits
+ 264              		.align	2
+ 265              		.set	.LANCHOR0,. + 0
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 8
 
 
- 267              	.Letext0:
- 268              		.file 2 "c:\\users\\daniel\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xp
- 269              		.file 3 "c:\\users\\daniel\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xp
- 270              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
- 271              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 272              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 273              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 274              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 275              		.file 9 "Core/Inc/usart.h"
- 276              		.file 10 "Core/Inc/main.h"
-ARM GAS  C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s 			page 9
+ 268              	huart2:
+ 269 0000 00000000 		.space	68
+ 269      00000000 
+ 269      00000000 
+ 269      00000000 
+ 269      00000000 
+ 270              		.text
+ 271              	.Letext0:
+ 272              		.file 2 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
+ 273              		.file 3 "c:\\users\\daniel\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xp
+ 274              		.file 4 "c:\\users\\daniel\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xp
+ 275              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 276              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 277              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 278              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 279              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 280              		.file 10 "Core/Inc/usart.h"
+ 281              		.file 11 "Core/Inc/main.h"
+ARM GAS  C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 usart.c
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:20     .text.MX_USART2_UART_Init:0000000000000000 $t
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:26     .text.MX_USART2_UART_Init:0000000000000000 MX_USART2_UART_Init
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:84     .text.MX_USART2_UART_Init:000000000000002c $d
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:90     .text.HAL_UART_MspInit:0000000000000000 $t
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:96     .text.HAL_UART_MspInit:0000000000000000 HAL_UART_MspInit
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:198    .text.HAL_UART_MspInit:0000000000000068 $d
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:204    .text.HAL_UART_MspDeInit:0000000000000000 $t
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:210    .text.HAL_UART_MspDeInit:0000000000000000 HAL_UART_MspDeInit
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:252    .text.HAL_UART_MspDeInit:0000000000000020 $d
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:264    .bss.huart2:0000000000000000 huart2
-C:\Users\Daniel\AppData\Local\Temp\cc6loCUB.s:260    .bss.huart2:0000000000000000 $d
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:20     .text.MX_USART2_UART_Init:0000000000000000 $t
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:26     .text.MX_USART2_UART_Init:0000000000000000 MX_USART2_UART_Init
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:84     .text.MX_USART2_UART_Init:000000000000002c $d
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:90     .text.HAL_UART_MspInit:0000000000000000 $t
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:96     .text.HAL_UART_MspInit:0000000000000000 HAL_UART_MspInit
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:198    .text.HAL_UART_MspInit:0000000000000068 $d
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:204    .text.HAL_UART_MspDeInit:0000000000000000 $t
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:210    .text.HAL_UART_MspDeInit:0000000000000000 HAL_UART_MspDeInit
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:256    .text.HAL_UART_MspDeInit:0000000000000028 $d
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:268    .bss.huart2:0000000000000000 huart2
+C:\Users\Daniel\AppData\Local\Temp\ccYWGL80.s:264    .bss.huart2:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Init
 Error_Handler
 HAL_GPIO_Init
 HAL_GPIO_DeInit
+HAL_NVIC_DisableIRQ
